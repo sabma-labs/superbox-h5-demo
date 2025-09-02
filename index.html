@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <title>H5 ⇄ SuperBox</title>
+    <script src="https://tcmpp-team.github.io/mini-programs/jssdk/tcsas-jssdk-1.0.1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script>eruda.init();</script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+    <h2>H5 ⇄ SuperBox</h2>
+    <div class="card">
+        <h3>Environment Check</h3>
+        <pre id="env">Checking...</pre>
+        <button id="btnSendToMini">Say Hello to Mini Program</button>
+    </div>
+
+    <div class="card">
+        <h3>Transfer</h3>
+        <div style="margin-bottom: 12px;">
+            <label for="amount" style="display: block; margin-bottom: 4px;">Amount:</label>
+            <input type="number" id="amount" value="1" placeholder="Enter amount" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+        </div>
+        <div style="margin-bottom: 16px;">
+            <label for="targetAddress" style="display: block; margin-bottom: 4px;">Target Address:</label>
+            <input type="text" id="targetAddress" value="AJb8fEVLCB6nYnMisSAZqR2Zar9bCSxmnzGya85phHTh" placeholder="Enter target address" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+        </div>
+        <button id="btnTransfer">Transfer</button>
+        <a id="a-transfer-detail" href="javascript:void(0)" target="_blank" style="margin-left: 12px; display: none;">Transaction Detail</a>
+    </div>
+
+    <div class="card">
+        <h3>Deposit</h3>
+        <div style="margin-bottom: 12px;">
+            <label for="depositPackageAddress" style="display: block; margin-bottom: 4px;">Package Address:</label>
+            <input type="text" id="depositPackageAddress" name="depositPackageAddress" value="Hm3g4xXM4JHt5EwFUcvVZ8RthR4KWUnR51fKHCbnKkiZ" placeholder="Enter package address" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+        </div>
+        <div style="margin-bottom: 12px;">
+            <label for="depositModuleName" style="display: block; margin-bottom: 4px;">Module Name:</label>
+            <input type="text" id="depositModuleName" name="depositModuleName" value="poker_b" placeholder="Enter module name (e.g., poker_b)" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+        </div>
+        <div style="margin-bottom: 12px;">
+            <label for="depositFunctionName" style="display: block; margin-bottom: 4px;">Function Name:</label>
+            <input type="text" id="depositFunctionName" name="depositFunctionName" value="deposit" placeholder="Enter function name (e.g., deposit)" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+        </div>
+        <div style="margin-bottom: 12px;">
+            <label for="depositRoomId" style="display: block; margin-bottom: 4px;">Room ID:</label>
+            <input type="text" id="depositRoomId" name="depositRoomId" value="32847238974289" placeholder="Enter room ID" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+        </div>
+        <div style="margin-bottom: 16px;">
+            <label for="depositAmount" style="display: block; margin-bottom: 4px;">Amount:</label>
+            <input type="number" id="depositAmount" name="depositAmount" value="1" min="0" step="any" placeholder="Enter amount (e.g., 1)" style="width: 100%; padding: 8px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box;">
+        </div>
+        <button id="btnDeposit">Deposit</button>
+        <a id="a-deposit-detail" href="javascript:void(0)" target="_blank" style="margin-left: 12px; display: none;">Transaction Detail</a>
+    </div>
+
+    <div class="card">
+        <h3>Received Message from Mini Program</h3>
+        <pre id="miniMsg">(Not received yet)</pre>
+    </div>
+</div>
+<script src="demo.js"></script>
+</body>
+</html>
